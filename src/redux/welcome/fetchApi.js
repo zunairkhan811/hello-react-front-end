@@ -5,7 +5,7 @@ const url = 'http://127.0.0.1:3000/api/v1/greetings';
 const fetchData = createAsyncThunk('greetings/get', async (arg, { rejectWithValue }) => {
   try {
     const { data } = await axios.get(url);
-    console.log(data)
+    console.log(data);
     return data;
   } catch (error) {
     return rejectWithValue(error.response.data);

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetchData from './fetchApi';;
+import fetchData from './fetchApi';
 
 const initialState = {
-  data: "",
+  data: '',
   isSuccess: false,
   message: '',
   loading: false,
@@ -19,14 +19,14 @@ const messageLists = createSlice({
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
         state.isSuccess = true;
-        console.log(action.payload)
-        state.data = action.payload
+        console.log(action.payload);
+        state.data = action.payload;
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.message = action.payload;
         state.loading = false;
         state.isSuccess = false;
-      })
+      });
   },
 });
 
