@@ -8,7 +8,7 @@ const MessageList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (state.data.length === 0) {
+    if (state.data === '') {
       dispatch(fetchData());
     }
   }, [dispatch, state.data]);
